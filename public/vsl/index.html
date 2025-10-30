@@ -7,13 +7,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Preloads para otimizar o carregamento do player de vídeo -->
+    <link rel="preload" href="https://scripts.converteai.net/8671d2f6-c45f-4b55-9776-68f6c495a79a/players/6903be35b6b436ae570e51fc/v4/player.js" as="script">
+    <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+    <link rel="dns-prefetch" href="https://cdn.converteai.net">
+    <link rel="dns-prefetch" href="https://scripts.converteai.net">
+    <link rel="dns-prefetch" href="https://images.converteai.net">
+    <link rel="dns-prefetch" href="https://api.vturb.com.br">
+    
     <style>
         /* --- Reset e Configurações Globais --- */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #f0f2f5; /* Cor de fundo geral, como a do Facebook */
+            background-color: #f0f2f5;
         }
 
         /* --- Seção Principal (Topo Azul Escuro) --- */
@@ -33,12 +42,11 @@
             width: 100%;
         }
 
-        /* Estilo para o seu logo no topo */
         .top-logo {
-            max-width: 350px; /* Ajuste o tamanho máximo se necessário */
+            max-width: 350px;
             width: 100%;
             height: auto;
-            margin: 0 auto 35px auto; /* Centraliza e adiciona espaço abaixo */
+            margin: 0 auto 35px auto;
         }
         
         .main-headline {
@@ -49,33 +57,16 @@
         }
 
         .video-container {
-            max-width: 540px;
+            max-width: 540px; /* Controla a largura máxima do vídeo */
+            width: 100%;
             margin: 0 auto;
             position: relative;
         }
-
-        .video-thumbnail {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
-
-        .video-progress-bar {
-            width: 100%;
-            height: 4px;
-            background-color: rgba(128, 128, 128, 0.5);
-            margin-top: -4px; /* Sobrepõe a imagem */
-            position: relative;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-            overflow: hidden;
-        }
-
-        .video-progress {
-            width: 25%; /* Progresso de exemplo */
-            height: 100%;
-            background-color: #8A2BE2; /* Roxo */
+        
+        /* Estilo para o player se ajustar bem */
+        .video-container #vid-6903be35b6b436ae570e51fc {
+             border-radius: 8px;
+             overflow: hidden;
         }
         
         .sound-check {
@@ -93,10 +84,10 @@
             background-color: #ffffff;
             padding: 20px;
             max-width: 800px;
-            margin: -20px auto 0 auto; /* Sobrepõe a seção azul */
+            margin: -20px auto 0 auto;
             border-radius: 8px;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            position: relative; /* Para o z-index funcionar */
+            position: relative;
             z-index: 10;
         }
         
@@ -135,7 +126,7 @@
             background-color: #f0f2f5;
             border-radius: 18px;
             padding: 8px 12px;
-            display: inline-block; /* Importante para o balão se ajustar ao texto */
+            display: inline-block;
             max-width: 100%;
         }
         
@@ -150,7 +141,7 @@
             color: #050505;
             line-height: 1.35;
             margin: 2px 0 0 0;
-            white-space: pre-wrap; /* Mantém as quebras de linha do texto */
+            white-space: pre-wrap;
         }
 
         .comment-actions {
@@ -203,21 +194,20 @@
 
     <main class="main-content">
         <div class="container">
-            <!-- SEU LOGO ADICIONADO AQUI -->
             <img src="https://www.champsdeleveil.online/vsl/images/logo.png" alt="Logo" class="top-logo">
             
-           <!-- TÍTULO AJUSTADO AQUI -->
             <div class="main-headline">
-                <p class="line-1">To make your $213 withdrawal NOW and evaluate new Youtube videos for us...</p>
-                <p class="line-2">Watch the 4-minute tutorial!</p>
+                <p>To make your $213 withdrawal NOW and evaluate new Youtube videos for us...</p>
+                <p style="margin-top: 8px;">Watch the 4-minute tutorial!</p>
             </div>
             
             <div class="video-container">
-                <!-- SUBSTITUA A URL ABAIXO PELA IMAGEM DO SEU VÍDEO -->
-                <img src="https://i.imgur.com/G9n82Ns.png" alt="Video Thumbnail" class="video-thumbnail">
-                <div class="video-progress-bar">
-                    <div class="video-progress"></div>
-                </div>
+                <!-- SCRIPT DO VÍDEO ADICIONADO AQUI -->
+                <vturb-smartplayer id="vid-6903be35b6b436ae570e51fc" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer> 
+                <script type="text/javascript"> 
+                    var s=document.createElement("script"); 
+                    s.src="https://scripts.converteai.net/8671d2f6-c45f-4b55-9776-68f6c495a79a/players/6903be35b6b436ae570e51fc/v4/player.js", s.async=!0,document.head.appendChild(s); 
+                </script>
             </div>
             
             <p class="sound-check">
@@ -235,7 +225,6 @@
             <!-- COMENTÁRIO 1 -->
             <div class="comment">
                 <div class="comment-avatar">
-                    <!-- SUBSTITUA PELA URL DA IMAGEM DE PERFIL -->
                     <img src="https://www.champsdeleveil.online/vsl/images/3.webp" alt="User Avatar">
                 </div>
                 <div class="comment-body">
@@ -276,7 +265,7 @@
             <!-- COMENTÁRIO 3 (RESPOSTA) -->
             <div class="comment is-reply">
                 <div class="comment-avatar">
-                    <img src="https://www.champsdeleveil.online/vsl/images/2.webp" alt="User Avatar">
+                    <img src="https://www.champsdeleveil.online/vsl/images/3.webp" alt="User Avatar">
                 </div>
                 <div class="comment-body">
                     <div class="comment-bubble">
@@ -313,8 +302,6 @@
                 </div>
             </div>
             
-            <!-- Adicione os outros comentários seguindo a mesma estrutura -->
-             
             <!-- COMENTÁRIO 5 -->
             <div class="comment">
                 <div class="comment-avatar">
@@ -327,16 +314,15 @@
                     </div>
                     <div class="comment-reactions">
                         <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89H8.207v-3.024h2.231V9.356c0-2.206 1.312-3.425 3.33-3.425 0.947 0 1.924 0.169 1.924 0.169v2.57h-1.31c-1.092 0-1.438 0.65-1.438 1.38v1.655h2.898l-0.465 3.024h-2.433v7.008C18.343 21.128 22 17.001 22 12c0-5.523-4.477-10-10-10z"></path></svg> 
-                        15
+                        17
                     </div>
                     <div class="comment-actions">
                         <span>Like</span> &middot; <span>Reply</span> &middot; 24 min
                     </div>
                 </div>
             </div>
-        </div>
         
- <!-- COMENTÁRIO 6 -->
+            <!-- COMENTÁRIO 6 -->
             <div class="comment">
                 <div class="comment-avatar">
                     <img src="https://www.champsdeleveil.online/vsl/images/6.webp" alt="User Avatar">
@@ -348,7 +334,7 @@
                     </div>
                     <div class="comment-reactions">
                         <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89H8.207v-3.024h2.231V9.356c0-2.206 1.312-3.425 3.33-3.425 0.947 0 1.924 0.169 1.924 0.169v2.57h-1.31c-1.092 0-1.438 0.65-1.438 1.38v1.655h2.898l-0.465 3.024h-2.433v7.008C18.343 21.128 22 17.001 22 12c0-5.523-4.477-10-10-10z"></path></svg> 
-                        15
+                        18
                     </div>
                     <div class="comment-actions">
                         <span>Like</span> &middot; <span>Reply</span> &middot; 26 min
@@ -356,7 +342,7 @@
                 </div>
             </div>
         
-        <!-- COMENTÁRIO 7 (RESPOSTA) -->
+            <!-- COMENTÁRIO 7 (RESPOSTA) -->
             <div class="comment is-reply">
                 <div class="comment-avatar">
                     <img src="https://www.champsdeleveil.online/vsl/images/5.webp" alt="User Avatar">
@@ -368,7 +354,7 @@
                     </div>
                     <div class="comment-reactions">
                         <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89H8.207v-3.024h2.231V9.356c0-2.206 1.312-3.425 3.33-3.425 0.947 0 1.924 0.169 1.924 0.169v2.57h-1.31c-1.092 0-1.438 0.65-1.438 1.38v1.655h2.898l-0.465 3.024h-2.433v7.008C18.343 21.128 22 17.001 22 12c0-5.523-4.477-10-10-10z"></path></svg> 
-                        11
+                        22
                     </div>
                     <div class="comment-actions">
                         <span>Like</span> &middot; <span>Reply</span> &middot; 39 min
@@ -376,10 +362,10 @@
                 </div>
             </div>
 
-<!-- COMENTÁRIO 8 -->
+            <!-- COMENTÁRIO 8 -->
             <div class="comment">
                 <div class="comment-avatar">
-                    <img src="https://www.champsdeleveil.online/vsl/images/6.webp" alt="User Avatar">
+                    <img src="https://www.champsdeleveil.online/vsl/images/4.webp" alt="User Avatar">
                 </div>
                 <div class="comment-body">
                     <div class="comment-bubble">
@@ -388,7 +374,7 @@
                     </div>
                     <div class="comment-reactions">
                         <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89H8.207v-3.024h2.231V9.356c0-2.206 1.312-3.425 3.33-3.425 0.947 0 1.924 0.169 1.924 0.169v2.57h-1.31c-1.092 0-1.438 0.65-1.438 1.38v1.655h2.898l-0.465 3.024h-2.433v7.008C18.343 21.128 22 17.001 22 12c0-5.523-4.477-10-10-10z"></path></svg> 
-                        15
+                        29
                     </div>
                     <div class="comment-actions">
                         <span>Like</span> &middot; <span>Reply</span> &middot; 1 h
@@ -396,7 +382,7 @@
                 </div>
             </div>
         
-        <!-- COMENTÁRIO 9 -->
+            <!-- COMENTÁRIO 9 -->
             <div class="comment">
                 <div class="comment-avatar">
                     <img src="https://www.champsdeleveil.online/vsl/images/7.webp" alt="User Avatar">
@@ -408,13 +394,14 @@
                     </div>
                     <div class="comment-reactions">
                         <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89H8.207v-3.024h2.231V9.356c0-2.206 1.312-3.425 3.33-3.425 0.947 0 1.924 0.169 1.924 0.169v2.57h-1.31c-1.092 0-1.438 0.65-1.438 1.38v1.655h2.898l-0.465 3.024h-2.433v7.008C18.343 21.128 22 17.001 22 12c0-5.523-4.477-10-10-10z"></path></svg> 
-                        15
+                        40
                     </div>
                     <div class="comment-actions">
                         <span>Like</span> &middot; <span>Reply</span> &middot; 1 h
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
 </body>
